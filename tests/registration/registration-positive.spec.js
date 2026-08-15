@@ -1,0 +1,14 @@
+import {expect} from '@playwright/test';
+import { customTest } from '../../fixtures/testFixtures.js';
+import {generateUser} from '../../utils/dataGenerator.js';
+
+customTest.describe('Registration Page', () => {
+  customTest('should show the Browse Event after successful registration', async ({ registerationPage }) => {
+    const user = generateUser();
+
+    await registerationPage.navigate();
+    await registerationPage.registerUser(user);
+    await expect(registerationPage.browseEventBtn).toBeVisible();
+    await expect(registerationPage.page).toHaveURL(process.env.BASE_URL);
+  });
+});
