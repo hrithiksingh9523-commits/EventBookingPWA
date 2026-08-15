@@ -29,7 +29,7 @@ export default defineConfig({
 
     use: {
 
-        baseURL: process.env.BASE_URL,
+        baseURL: process.env.BASE_URL || 'http://localhost:3000',
 
         headless: true,
 
@@ -38,6 +38,14 @@ export default defineConfig({
         video: 'retain-on-failure',
 
         trace: 'retain-on-failure'
+    },
+
+    // Start and wait for the web server before running tests (helpful in CI)
+    webServer: {
+        command: 'npm run start',
+        port: 3000,
+        timeout: 120_000,
+        reuseExistingServer: true
     },
 
     projects: [

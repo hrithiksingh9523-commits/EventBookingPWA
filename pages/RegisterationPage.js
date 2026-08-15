@@ -10,7 +10,14 @@ class RegisterationPage {
   }
 
   async navigate() {
-    await this.page.goto('/register');
+    const base = process.env.BASE_URL;
+    if (base) {
+      const url = new URL('/register', base).toString();
+      await this.page.goto(url);
+    } else {
+      // fallback to relative navigation — relies on Playwright's baseURL or a running local server
+      await this.page.goto('/register');
+    }
   }
   async emailInput(email) {
     await this.emailBox.fill(email);
