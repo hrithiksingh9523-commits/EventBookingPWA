@@ -1,9 +1,9 @@
 import fs from 'node:fs';
 
 const reports = [
-  { browser: 'Chromium', file: 'test-results/chromium.json' },
-  { browser: 'WebKit', file: 'test-results/webkit.json' },
-  { browser: 'Firefox', file: 'test-results/firefox.json' }
+  { browser: 'Chromium', file: 'dashboard-results/chromium.json' },
+  { browser: 'WebKit', file: 'dashboard-results/webkit.json' },
+  { browser: 'Firefox', file: 'dashboard-results/firefox.json' }
 ];
 
 const folders = {

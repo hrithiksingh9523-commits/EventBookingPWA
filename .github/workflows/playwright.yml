@@ -22,19 +22,19 @@ jobs:
     - name: Run Chromium tests
       run: npx playwright test --project=chromium --reporter=list,json,html
       env:
-        PLAYWRIGHT_JSON_OUTPUT_FILE: test-results/chromium.json
+        PLAYWRIGHT_JSON_OUTPUT_FILE: dashboard-results/chromium.json
       continue-on-error: true
 
     - name: Run WebKit tests
       run: npx playwright test --project=webkit --reporter=list,json,html
       env:
-        PLAYWRIGHT_JSON_OUTPUT_FILE: test-results/webkit.json
+        PLAYWRIGHT_JSON_OUTPUT_FILE: dashboard-results/webkit.json
       continue-on-error: true
 
     - name: Run Firefox tests
       run: npx playwright test --project=firefox --workers=1 --timeout=120000 --reporter=list,json,html
       env:
-        PLAYWRIGHT_JSON_OUTPUT_FILE: test-results/firefox.json
+        PLAYWRIGHT_JSON_OUTPUT_FILE: dashboard-results/firefox.json
       continue-on-error: true
 
     - name: Generate test dashboard
@@ -49,5 +49,6 @@ jobs:
         path: |
           playwright-report/
           test-results/
+          dashboard-results/
         if-no-files-found: ignore
         retention-days: 30
