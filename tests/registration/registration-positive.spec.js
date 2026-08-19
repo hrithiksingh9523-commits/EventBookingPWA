@@ -11,4 +11,5 @@ customTest.describe('Registration Page', () => {
     await expect(registerationPage.browseEventBtn).toBeVisible();
     await expect(registerationPage.page).toHaveURL(process.env.BASE_URL);
   });
+
 });

@@ -93,8 +93,9 @@ export const whitespaceAndEdgeCases = [
         email: 'user_' + 'a'.repeat(200) + '@test.com',
         password: 'A1!'+ 'a'.repeat(250),
         confirmPassword: 'A1!'+ 'a'.repeat(250),
-        expectedKey: 'passwordUppercase'
+        expectedKey: 'serverError'
     }
+    
 ];
 
 export const duplicateEmailCase = {

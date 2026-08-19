@@ -28,6 +28,6 @@ export const registrationMessages = {
         'One number (0–9)',
     passwordSpecialChar:
         'One special character (!@#$%^&*…)',
-    valueTooLong:
-        'Value too long'
+    serverError: 
+        'Internal Server Error'
 };

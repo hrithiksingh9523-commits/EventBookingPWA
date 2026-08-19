@@ -29,8 +29,9 @@ class RegisterationPage {
     await this.confirmPasswordBox.fill(confirmPassword);
     }
 
-    async createAccount() {
+  async createAccount() {
     await this.createAccountBtn.click();
+    await this.page.waitForLoadState('networkidle');
   }
 
   async fillRegistrationForm(email, password, confirmPassword) {

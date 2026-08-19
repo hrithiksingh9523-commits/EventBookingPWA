@@ -1,6 +1,8 @@
+import { randomUUID } from 'node:crypto';
+
 export function generateEmail() {
-    const timestamp = Date.now();
-    return `automation_${Date.now()}_${Math.floor(Math.random() * 10000)}@test.com`;
+    const unique = randomUUID().replace(/-/g, '').slice(0, 16);
+    return `automation_${unique}@test.com`;
 }
 
 
