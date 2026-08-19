@@ -50,7 +50,7 @@ customTest.describe('Registration Page - Negative', () => {
 	}
 
 	for (const tc of whitespaceAndEdgeCases) {
-		customTest.only(`shows validation for ${tc.scenario}`, async ({ registerationPage }) => {
+		customTest(`shows validation for ${tc.scenario}`, async ({ registerationPage }) => {
 			await registerationPage.navigate();
 			await registerationPage.fillRegistrationForm(tc.email, tc.password, tc.confirmPassword);
 			await registerationPage.createAccount();
