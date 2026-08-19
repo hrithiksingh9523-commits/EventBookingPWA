@@ -19,9 +19,9 @@ const browserFolders = Object.fromEntries(
 );
 
 function getFolder(file) {
-  const normalized = file.replaceAll('\\\\', '/');
-  if (normalized.includes('/login/')) return 'login';
-  if (normalized.includes('/registration/')) return 'registration';
+  const normalized = file.replaceAll('\\\\', '/').toLowerCase();
+  if (/(^|\/)login\//.test(normalized)) return 'login';
+  if (/(^|\/)registration\//.test(normalized)) return 'registration';
   return null;
 }
 

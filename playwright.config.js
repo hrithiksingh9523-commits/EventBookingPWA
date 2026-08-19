@@ -23,8 +23,9 @@ export default defineConfig({
     retries: process.env.CI ? 2 : 0,
 
     reporter: [
-        ['list'],
-        ['html']
+      ['list'],
+      ['html'],
+      ['json', { outputFile: 'test-results/results.json' }]
     ],
 
     use: {
