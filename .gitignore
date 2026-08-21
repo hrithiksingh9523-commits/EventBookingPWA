@@ -7,3 +7,20 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 .env
+# Local VS Code/Copilot agents
+.github/agents/
+
+# Local debug scripts
+debug-*.mjs
+
+# OS/editor metadata
+desktop.ini
+.DS_Store
+.vscode/
+
+# OneDrive backup files
+*.onedrive-backup
+
+# Logs and temporary archives
+*.log
+*.zip
